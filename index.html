@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gardens By The Bay</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #111;
+  }
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: #f7f7f7;
+    color: #black;
+  }
+  .bg-1 h3 {color: #black;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: #777;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+  footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }  
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+    resize: none;
+ 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+  
+  .center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 110%;
+  }
+  
+.center3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  }
+  
+ }
+  p.ex1 {
+  padding: 10px;
+  text-align: center;
+}
+
+ p.ex2 {
+  padding: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+  p.ex3 {
+  padding: 20px 10px 0px 10px;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+}
+
+  p.ex4 {
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+  p.ex4 {
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Gardens by the Bay</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">HOME</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">ATTRACTIONS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#Supertree">Supertree Grove</a></li>
+            <li><a href="#CloudForest">Cloud Forest</a></li>
+            <li><a href="#FlowerDome">Flower Dome</a></li> 
+          </ul>
+        </li>
+                <li><a href="#Map">MAP</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="overview of GBtB.jpg" alt="Gardens by the Bay" width="1200" height="700">
+        <div class="carousel-caption">
+          <p style ="font-size:150%;"> Gardens by the Bay </p>
+          <p>Where nature and city coincides.</p>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="wow.jpg" alt="Flowers" width="1200" height="700">
+        <div class="carousel-caption">
+          <p>Flowers from all over the world on display.</p>
+        </div>      
+      </div>
+	
+	 <div class="item">
+        <img src="night lights 2.2.jpg" alt="Supertrees at night" width="1200" height="700">
+        <div class="carousel-caption">
+          <p>Stunning visuals, even at night.</p>
+        </div>      
+      </div>
+	  </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Container (Super Tree Section) -->
+<div id="Supertree" class="container text-center">
+  <h3>Supertree Grove</h3>
+  <p><em>These are some very large trees!</em></p>
+  <img src="Supertree-Grove-3.jpg" alt="Supertree Grove" width="85%" height="85%">
+  <p class="ex1">Measuring between 25 and 50 metres tall, Gardens by the Bay's Supertrees are designed with large canopies that provide shade in the day and come alive with an exhilarating display of lights and sounds at night.</p>
+  <p> Click on the bottom images to learn more about what you can do at the Supertree Grove!</p>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p class="ex4"><strong>Garden Rapsody</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+        <img src="Garden Rapsody.jpg" class="img-rectangle" alt="Garden Rapsody" width="90%">
+  </a>
+      <div id="demo" class="collapse">
+        <p class="ex1">With 2 shows per day, get lost in beautiful musical soundtracks and stunning choreography of lights.</p>
+	  </div>  
+    </div>
+    <div class="col-sm-4">
+      <p class="ex4"><strong>OCBD Skyway</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+        <img src="OCBC Skyway.jpg" class="img-rectangle" alt="OCBC Skyway" width="90%">
+      </a>
+      <div id="demo2" class="collapse">
+        <p class="ex1">This 128-metre long aerial walkway gives visitors glorious photo-taking opportunities to capture the scenic beauty of the surrounding flora.</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="ex4"><strong>Observatory</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+        <img src="Observatory.jpg" class="img-rectangle" alt="Supertree Observatory" width="90%">
+      </a>
+      <div id="demo3" class="collapse">
+        <p class="ex1"> Located at the canopy of the tallest Supertree at Supertree Grove, visitors can soak in unblocked cityscape views at this open-air rooftop deck.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Cloud Forest Section) -->
+<div id="CloudForest" class="bg-1">
+  <div class="container">
+    <h3 class="text-center" style= "color:black;">Cloud Forest</h3>
+    <p class="text-center" style= "color:grey;">A mysterious world veiled in the clouds...(Actually it's just mist).</p>
+    <img class="center" src="Cloud Forest 2.jpg" alt="Cloud Forest" style="width:100%;">
+  <p class="ex1">Explore the tropical highlands amidst orchids, pitcher plants and ferns from the cool-moist Tropical Montane region. Be amazed as you encounter our breath-taking indoor waterfall at 30 metres and descend through the surreal mist-filled Cloud Walk and Treetop Walk.</p>
+  <p class="ex1"> Click on the images to learn more about these features!</p>
+  <br>
+
+<div class="w3-content">
+<div class="w3-row w3-margin">
+
+<div class="w3-third">
+  <img src="sculpture.jpg" style="width:100%;min-height:100px" usemap="#workmap1">
+	<map name="workmap1"> 
+			<area shape = "default" alt="Featured Sculptures" href="https://www.gardensbythebay.com.sg/en/attractions/cloud-forest/featured-sculptures.html">
+	</map>	
+</div>
+<div class="w3-twothird w3-container">
+  <p style="font-size: 200%">Featured Sculptures</p>
+  <p>
+  In collaboration with Taiwan’s Chini Gallery, we are presenting the first full-scale art exhibition in Cloud Forest, Lee Kuang-Yu's “A Sculptor’s Secret Garden”. This 16-piece art exhibition is curated by Tan Hwee Koon.
+  </p>
+</div>
+
+</div>
+<div class="w3-row w3-margin">
+
+<div class="w3-third">
+  <img src="Waterfall View.jpg" style="width:100%;min-height:100px" usemap="#workmap2">
+	<map name="workmap2"> 
+			<area shape = "default" alt="Waterfall View" href="https://www.gardensbythebay.com.sg/en/attractions/cloud-forest/explore-cloud-forest.html">
+	</map>	
+</div>
+<div class="w3-twothird w3-container">
+  <p style="font-size: 200%">Waterfall View<p>
+  <p>
+  While enjoying the cooling path behind the waterfall, take a moment to consider the importance of earth’s sources of fresh water. Learn how cloud forests capture water droplets from mist and fog by means of epiphyte-laden branches.
+  </p>
+</div>
+
+</div>
+<div class="w3-row w3-margin">
+
+<div class="w3-third">
+  <img src="theatre.jpg" style="width:100%;min-height:100px" usemap="#workmap3">
+	<map name="workmap3"> 
+			<area shape = "default" alt="Cloud Forest Theatre" href="https://www.gardensbythebay.com.sg/en/attractions/cloud-forest/explore-cloud-forest.html">
+	</map>	
+</div>
+<div class="w3-twothird w3-container">
+  <p style="font-size: 200%">Cloud Forest Theatre</p>
+  <p >
+ Moving on from Cloud Forest Gallery, find out how we as individuals can do our part to help conserve nature, veer away from potential disaster, and move towards a more sustainable future.
+  </p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+    
+  <!-- Container (Flower Dome Section) -->
+<div id="FlowerDome" class="container text-center">
+  <h3>Flower Dome</h3>
+  <p><em> So many flowers!</em></p>
+  <img src="flower dome flower.jpg" alt="Flower Dome" width="100%" height="100%">
+  <p class="ex1">Enter a world of perpetual spring! Replicating the cool and dry Mediterranean climate, Flower Dome showcases exotic plants from five continents which are displayed in nine different Gardens.</p>
+  <p class="ex3"> The Flower Dome is filled with various events round the year. This time, Hello Kitty is coming to the Flower Dome!</p>
+  <br>
+ 
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="Hello Kitty 1.jpg" alt="Me" style="width:90%">
+	  <p class="ex1"></p>
+    </div>
+    <div class="w3-col m6">
+      <img src="Hello Kitty 2.jpg" alt="Me" style="width:90%">
+    </div>
+  </div>
+  
+   <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="Hello Kitty 3.jpg" alt="Me" style="width:90%">
+	   <p class="ex1"></p>
+    </div>
+    <div class="w3-col m6">
+      <img src="Hello Kitty 4.jpg" alt="Me" style="width:90%">
+    </div>
+  </div>
+  </div>
+  </div>
+	
+  <!-- Container (Map Section) -->
+<div id="Map" class="bg-1">
+ <div class="container">
+<h3 class="text-center" style= "color:black;">Map - Gardens by the Bay</h3>
+<p class="text-center" style= "color:grey;">"I'm the map, I'm the map, I'm the map......I'm the map!"</p>
+<p class="text-center"> (Click on the attractions to learn more!)</p>
+<img src="map.jpg" class="center3" usemap="#workmap" style="width:100%">
+
+<map name="workmap">
+  <area shape="poly" coords="483,133,514,108,546,109,587,127,605,154,552,173,500,161"
+ alt="flower dome" href="https://www.gardensbythebay.com.sg/en/attractions/flower-dome/explore-flower-dome.html">
+  <area shape="poly" coords="606,177,635,150,662,147,687,174,699,212,656,226,617,208"
+alt="cloud forest" href="https://www.gardensbythebay.com.sg/en/attractions/cloud-forest/visitor-information.html">
+  <area shape="circle" coords="455,260,80"
+alt="supertree" href="https://www.gardensbythebay.com.sg/en/attractions/supertree-grove-observatory-ocbc-skyway/supertree-grove.html">
+<area shape ="circle" coords="753,250,30"
+alt="Children's Garden" href="https://www.gardensbythebay.com.sg/en/attractions/far-east-organization-childrens-garden.html">
+<area shape ="circle" coords="172,283,25"
+alt="Floral Fantasy" href="https://www.gardensbythebay.com.sg/en/attractions/floral-fantasy/visitor-information.html">
+<area shape ="circle" coords="264,323,30"
+alt="Art Sculpture" href="https://www.gardensbythebay.com.sg/en/attractions/art-sculptures.html">
+<area shape ="poly" coords="114,452,77,427,162,382,175,433,218,457"
+alt="Serene Garden" href="https://www.gardensbythebay.com.sg/en/attractions/serene-garden.html">
+<area shape ="poly" coords="314,296,356,200,380,178,412,185,378,223,359,295"
+alt="Heritage Garden" href="https://www.gardensbythebay.com.sg/en/attractions/heritage-gardens/visitor-information.html">
+<area shape ="poly" coords="502,188,522,175,534,191,528,213"
+alt="Heritage Garden" href="https://www.gardensbythebay.com.sg/en/attractions/heritage-gardens/visitor-information.html">
+<area shape ="poly" coords="391,69,406,73,397,133,452,173,417,177,371,170,330,226,300,295,266,279,364,151"
+alt="Dragonfly and Kingfisher Lakes" href="https://www.gardensbythebay.com.sg/en/attractions/dragonfly-and-kingfisher-lakes.html">
+</map>
+
+</div>
+</div>
+  
+
+
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Assignment 1 made by - Koh Shao Wei </p> 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
